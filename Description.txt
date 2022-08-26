@@ -1,0 +1,54 @@
+Как пользователь я хочу иметь возможность сортировки 
+	по категориям(тип товара, бренд, цена) для удобства поиска
+Как пользователь я хочу иметь возможность регистрации и авторизации, 
+	чтобы иметь возможность отсматривать заказы с разных устройств, 
+	не бояться за корзину,
+	хранить историю,
+	оставлять отзывы, комментарии,
+	связывоться с поддержкой
+Как админ я хочу иметь возможность
+	создавать категории
+	создавать товары
+	отсматривать историю покупок
+
+// Who When What Then
+
+// View
+Шапка
+Logo[/] -- navigation(market[/], about[/about], cart, (if auth) user(drowdown,)) -> toBurger
+	if auth -> user
+	else -> sign in
+-
+	user
+		Personal
+		My Orders
+		[Admin]
+
+
+
+Контент [/]
+LeftSideBar -> toDropdown
+	search
+	checkboxes
+		types
+		brands
+		others
+Main
+	Список товаров
+
+Контент [/about]
+Main
+	About Page
+
+Контент [/user]
+LeftSideBar
+	Personal
+	My Orders
+	[Admin]
+Main
+
+// API
+GET BRANDS
+GET TYPES
+POST ADD_BRAND
+POST ADD_TYPE 
