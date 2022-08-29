@@ -69,7 +69,7 @@ CartProduct.belongsTo(Cart)
 CartProduct.hasOne(Product)
 Product.belongsTo(CartProduct)
 
-Product.hasMany(Rating)
+Product.hasMany(Rating, {as: 'info'})
 Rating.belongsTo(Product)
 
 Product.hasMany(ProductInfo)

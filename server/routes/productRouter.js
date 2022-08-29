@@ -3,7 +3,7 @@ const router = new Router()
 
 const productController = require('../controllers/productController.js')
 
-router.post('/', productController.create)
+router.post('/', checkRole(process.env.ROLE_ADMIN), productController.create)
 router.get('/', productController.getAll)
 router.get('/:id', productController.getOne)
 
