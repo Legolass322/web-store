@@ -1,3 +1,4 @@
+const ApiError = require('../error/ApiError.js')
 const jwt = require('jsonwebtoken')
 
 module.exports = function (req, res, next) {
@@ -7,12 +8,12 @@ module.exports = function (req, res, next) {
     try {
         const token = req.headers.authorization.split(' ')[1]
         if (!token) {
-            return res.state(401).json({message: 'User is unauthorized'})
+            return next(ApiError.unauth('User is unauthorized'))
         }
         const decoded = jwt.verify(token, process.env.SECRET_KEY)
         req.user = decoded
         next()
     } catch (e) {
-        return res.state(401).json({message: 'User is unauthorized'})
+        return next(ApiError.unauth('User is unauthorized'))
     }
 }
