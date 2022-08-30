@@ -1,6 +1,5 @@
 const uuid = require('uuid')
 const path = require('path')
-const { nextTick } = require('process')
 const ApiError = require('../error/ApiError.js')
 const {Product, ProductInfo} = require('../models/models.js')
 

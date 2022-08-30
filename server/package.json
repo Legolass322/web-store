@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "lint": "eslint ./**/*.js"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "sequelize": "^6.21.4"
   },
   "devDependencies": {
+    "eslint": "^8.23.0",
     "nodemon": "^2.0.19"
   }
 }
